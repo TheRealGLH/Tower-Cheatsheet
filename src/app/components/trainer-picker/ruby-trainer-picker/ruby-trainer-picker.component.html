@@ -1,1 +1,21 @@
-<p>ruby-trainer-picker works!</p>
+<div>
+    <select>
+        <option>Youngster</option>
+        <option>Pokemon Trainer</option>
+    </select>
+    <select>
+        <option>Mars</option>
+        <option>Joey</option>
+    </select>
+</div>
+<div>
+    Current selected Pokémon: {{selectedPokemon.name}}
+    <ul class="trainer-pokemon-list">
+        <li *ngFor="let pokemon of trainerPokemon; index as i" (click)="selectPokemon(pokemon)">
+            <img #img src="/assets/sprites/gen3/{{pokemon.name.toLowerCase()}}.png" 
+            (error)="img.src = '/assets/substitute-3.png'" 
+            alt="{{pokemon.name}}" title="{{pokemon.name}}"/>
+            {{pokemon.name}}
+        </li>
+    </ul>
+</div>

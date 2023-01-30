@@ -1,5 +1,9 @@
 <p>Ruby & Sapphire</p>
 
-<app-gen3-teampicker></app-gen3-teampicker>
+<ul>
+    <li><app-gen3-teampicker></app-gen3-teampicker></li>
 
-<app-ruby-trainer-picker></app-ruby-trainer-picker>
+    <li><app-ruby-trainer-picker (selectedPokemonEvent)="selectedTrainerPokemon($event)"></app-ruby-trainer-picker></li>
+</ul>
+{{myPokemon.name+'\'s attack VS ' + trainerPokemon.name + ' ' +
+    result.desc() + result.kochance()}}
