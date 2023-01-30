@@ -1,0 +1,8 @@
+#sheet-damage-info, #sheet-picker-container{
+    display: block;
+}
+#sheet-damage-info {
+    background-color: #EDEDED;
+    padding:10px;
+    border-radius: 10px;;
+}

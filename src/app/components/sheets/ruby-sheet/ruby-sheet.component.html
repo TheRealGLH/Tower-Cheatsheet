@@ -1,9 +1,21 @@
 <p>Ruby & Sapphire</p>
 
-<ul>
-    <li><app-gen3-teampicker></app-gen3-teampicker></li>
+<div id="sheet-picker-container">
+    <ul>
+        <li><app-gen3-teampicker></app-gen3-teampicker></li>
 
-    <li><app-ruby-trainer-picker (selectedPokemonEvent)="selectedTrainerPokemon($event)"></app-ruby-trainer-picker></li>
-</ul>
-{{myPokemon.name+'\'s attack VS ' + trainerPokemon.name + ' ' +
-    result.desc() + result.kochance()}}
+        <li><app-ruby-trainer-picker (selectedPokemonEvent)="selectedTrainerPokemon($event)"></app-ruby-trainer-picker></li>
+    </ul>
+</div>
+<div id="sheet-damage-info">
+    <p>{{myPokemon.name+'\'s attack VS ' + trainerPokemon.name + ' ' +
+        result.desc() + result.kochance()}}
+    </p>
+    {{trainerPokemon.name}}'s moves:
+        <ul>
+            <li *ngFor="let enemyResult of enemyCalcResults; index of i">
+                <b *ngIf="enemyResult.damage; else elseBlock">{{enemyResult.move.name + ': ' + enemyResult.kochance().text}}</b>
+                <ng-template #elseBlock>{{enemyResult.move.name}}</ng-template>
+            </li>
+        </ul>
+</div>

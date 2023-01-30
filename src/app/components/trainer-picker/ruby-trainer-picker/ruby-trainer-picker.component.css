@@ -1,3 +1,14 @@
-.trainer-pokemon-list li:hover{
+.trainer-pokemon-list {
+    list-style-type: none;
+}
+.trainer-pokemon-item{
+    display:inline-block;
+    padding:5px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 6px;
+}
+.trainer-pokemon-item:hover{
     background-color: #DDD;
+
 }

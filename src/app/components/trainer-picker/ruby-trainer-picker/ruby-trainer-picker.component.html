@@ -9,13 +9,13 @@
     </select>
 </div>
 <div>
-    Current selected Pokémon: {{selectedPokemon.name}}
-    <ul class="trainer-pokemon-list">
-        <li *ngFor="let pokemon of trainerPokemon; index as i" (click)="selectPokemon(pokemon)">
+    <p>Current selected Pokémon: {{selectedPokemon.name}}</p>
+    <div class="trainer-pokemon-list">
+        <div class="trainer-pokemon-item" *ngFor="let pokemon of trainerPokemon;" (click)="selectPokemon(pokemon)">
             <img #img src="/assets/sprites/gen3/{{pokemon.name.toLowerCase()}}.png" 
             (error)="img.src = '/assets/substitute-3.png'" 
-            alt="{{pokemon.name}}" title="{{pokemon.name}}"/>
+            alt="{{pokemon.name}}" title="{{pokemon.name}}"/><br/>
             {{pokemon.name}}
-        </li>
-    </ul>
+        </div>
+    </div>
 </div>
